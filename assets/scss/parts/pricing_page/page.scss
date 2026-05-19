@@ -336,7 +336,7 @@ main {
             i { color: $color-primary; }
         }
 
-        &:hover {
+        &:hover:not(&--active) {
           background: $color-light-bg;
         }
     }

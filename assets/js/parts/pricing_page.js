@@ -28,19 +28,37 @@ function initSlider() {
         tooltip.textContent = value;
     }
 
-    function sync(value) {
-        const val = Math.max(parseInt(range.min), Math.min(parseInt(range.max), value || parseInt(range.min)));
+    const min = parseInt(range.min);
+    const max = parseInt(range.max);
+
+    function clamp(val) {
+        return Math.max(min, Math.min(max, val || min));
+    }
+
+    function applyValue(val) {
         input.value = val;
         range.value = val;
         updateSliderUI(val);
         updatePricing(val);
     }
 
-    range.addEventListener('input', () => sync(parseInt(range.value)));
-    input.addEventListener('input', () => sync(parseInt(input.value)));
-    input.addEventListener('blur', () => sync(parseInt(input.value)));
+    range.addEventListener('input', () => applyValue(parseInt(range.value)));
 
-    sync(parseInt(range.value));
+    input.addEventListener('input', () => {
+        const val = parseInt(input.value);
+        if (val >= min && val <= max) {
+            range.value = val;
+            updateSliderUI(val);
+            updatePricing(val);
+        }
+    });
+
+    input.addEventListener('blur', () => applyValue(clamp(parseInt(input.value))));
+    input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') applyValue(clamp(parseInt(input.value)));
+    });
+
+    applyValue(parseInt(range.value));
 }
 
 function updatePricing(students) {
