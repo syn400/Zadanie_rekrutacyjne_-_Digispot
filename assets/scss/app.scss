@@ -1,9 +1,15 @@
-@use "../../node_modules/bootstrap/scss/bootstrap";
+@use "../../node_modules/bootstrap/scss/bootstrap" with (
+    $font-size-base: 1.6rem,
+    $spacer: 1.6rem,
+    $grid-gutter-width: 2.4rem
+);
 
 @use "global/_variables";
 @use "global/_normalize";
 @use "global/_reset";
 @use 'global/_base';
+@use 'global/_typography';
+@use 'global/_ui';
 
 
 @use "parts/pricing_page/page";
