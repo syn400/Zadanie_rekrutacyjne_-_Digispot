@@ -74,7 +74,7 @@
                                             <span class="configurator__toggle-label">E-dziennik</span>
                                             <div class="d-flex align-items-center gap-2">
                                                 <label class="switch">
-                                                    <input type="checkbox" class="switch__input" checked disabled>
+                                                    <input type="checkbox" class="switch__input" data-price="1" checked disabled>
                                                     <span class="switch__track"></span>
                                                 </label>
                                                 <i class="bi bi-lock-fill configurator__lock" aria-hidden="true"></i>
@@ -84,7 +84,7 @@
                                             <span class="configurator__toggle-label">Sekretariat</span>
                                             <div class="d-flex align-items-center gap-2">
                                                 <label class="switch">
-                                                    <input type="checkbox" class="switch__input" checked disabled>
+                                                    <input type="checkbox" class="switch__input" data-price="1" checked disabled>
                                                     <span class="switch__track"></span>
                                                 </label>
                                                 <i class="bi bi-lock-fill configurator__lock" aria-hidden="true"></i>
@@ -103,49 +103,49 @@
                                         <div class="configurator__toggle-row mb-3">
                                             <span class="configurator__toggle-label">Płatności online</span>
                                             <label class="switch">
-                                                <input type="checkbox" class="switch__input">
+                                                <input type="checkbox" class="switch__input" data-price="0.1">
                                                 <span class="switch__track"></span>
                                             </label>
                                         </div>
                                         <div class="configurator__toggle-row mb-3">
                                             <span class="configurator__toggle-label">Finanse</span>
                                             <label class="switch">
-                                                <input type="checkbox" class="switch__input">
+                                                <input type="checkbox" class="switch__input" data-price="0.2">
                                                 <span class="switch__track"></span>
                                             </label>
                                         </div>
                                         <div class="configurator__toggle-row mb-3">
                                             <span class="configurator__toggle-label">E-learning</span>
                                             <label class="switch">
-                                                <input type="checkbox" class="switch__input">
+                                                <input type="checkbox" class="switch__input" data-price="0.3">
                                                 <span class="switch__track"></span>
                                             </label>
                                         </div>
                                         <div class="configurator__toggle-row mb-3">
                                             <span class="configurator__toggle-label">Nauczanie online</span>
                                             <label class="switch">
-                                                <input type="checkbox" class="switch__input">
+                                                <input type="checkbox" class="switch__input" data-price="0.4">
                                                 <span class="switch__track"></span>
                                             </label>
                                         </div>
                                         <div class="configurator__toggle-row mb-3">
                                             <span class="configurator__toggle-label">Rejestracja</span>
                                             <label class="switch">
-                                                <input type="checkbox" class="switch__input">
+                                                <input type="checkbox" class="switch__input" data-price="0.5">
                                                 <span class="switch__track"></span>
                                             </label>
                                         </div>
                                         <div class="configurator__toggle-row mb-3">
                                             <span class="configurator__toggle-label">CRM</span>
                                             <label class="switch">
-                                                <input type="checkbox" class="switch__input">
+                                                <input type="checkbox" class="switch__input" data-price="0.6">
                                                 <span class="switch__track"></span>
                                             </label>
                                         </div>
                                         <div class="configurator__toggle-row">
                                             <span class="configurator__toggle-label">Medioteka</span>
                                             <label class="switch">
-                                                <input type="checkbox" class="switch__input">
+                                                <input type="checkbox" class="switch__input" data-price="0.7">
                                                 <span class="switch__track"></span>
                                             </label>
                                         </div>
@@ -324,5 +324,37 @@
                 </div>
             </section>
         </main>
+
+        <div class="modal fade" id="trialModal" tabindex="-1" aria-labelledby="trialModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header border-0 pb-0">
+                        <h5 class="modal-title fw-bold" id="trialModalLabel">Twoja konfiguracja</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-muted mb-3">Podsumowanie wybranych modułów i kosztów:</p>
+                        <ul class="list-group list-group-flush mb-3" id="modalModulesList"></ul>
+                        <hr>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-muted">Liczba słuchaczy:</span>
+                            <strong id="modalStudents"></strong>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-muted">Miesięczna cena za słuchacza:</span>
+                            <strong id="modalPricePerStudent"></strong>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-muted">Miesięczny koszt netto:</span>
+                            <strong id="modalNetto"></strong>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span class="text-muted">Miesięczny koszt brutto:</span>
+                            <strong id="modalBrutto" class="fs-5"></strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

@@ -269,12 +269,16 @@ main {
     &__total-row {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
       margin-bottom: .6rem;
+      align-items: center;
 
       font-size: 2.4rem;
       font-weight: 700;
       line-height: 3.2rem;
+    }
+
+    &__total-value {
+      white-space: nowrap;
     }
 
     &__netto-row {
@@ -406,5 +410,33 @@ main {
             transform: translateX(5px);
           }
         }
+    }
+}
+
+#trialModal {
+    .modal-content {
+        border: 1px solid $color-border;
+        border-radius: 2rem;
+        box-shadow: $card-shadow;
+        padding: 0.8rem;
+    }
+
+    .modal-header,
+    .modal-footer {
+        border: none;
+    }
+
+    .list-group-item {
+        border-color: $color-border;
+    }
+
+    .modal-footer .btn-primary {
+        border-radius: 10rem;
+        padding: 0.8rem 2.4rem;
+    }
+
+    .modal-footer .btn-secondary {
+        border-radius: 10rem;
+        padding: 0.8rem 2.4rem;
     }
 }
