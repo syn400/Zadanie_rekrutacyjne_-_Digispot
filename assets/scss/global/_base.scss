@@ -11,3 +11,10 @@ body {
     color: $color-text;
     background: #fff;
 }
+
+hr {
+    border-top: 1px solid $color-border;
+    opacity: 1;
+    margin-top: 2.4rem;
+    margin-bottom: 2.4rem;
+}

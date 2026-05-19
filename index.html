@@ -8,62 +8,321 @@
         <meta name="robots" content="noindex">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
         <link rel="stylesheet" href="dist/app.css">
         <script src="dist/app.js" defer></script>
     </head>
 
     <body>
-        <h1>lorem</h1>
-        <h2>lorem</h2>
-        <h3>lorem</h3>
-        <p>lorem</p>
-        <button class="btn">test</button>
-        <a class="btn btn--primary">test</a>
-        <label class="switch">
-            <input type="checkbox" class="switch__input">
-            <span class="switch__track"></span>
-        </label>
-        <label class="switch">
-            <input type="checkbox" disabled checked class="switch__input switch__input--blocked">
-            <span class="switch__track"></span>
-        </label>
-        
-        <main>
-            <!-- Hero section START -->
-            <section class="hero-section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            Hero section
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Hero section END -->
+       <main class="position-relative">
+            <div class="gradient-bg__circle gradient-bg__circle--1" aria-hidden="true"></div>
+            <div class="gradient-bg__circle gradient-bg__circle--2" aria-hidden="true"></div>
+            <div class="gradient-bg__circle gradient-bg__circle--3" aria-hidden="true"></div>
+            <div class="gradient-bg__circle gradient-bg__circle--4" aria-hidden="true"></div>
 
-            <!-- Pricing section START -->
-            <section class="pricing-section">
+            <section class="hero text-center">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            Pricing section
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <h1 class="hero__heading">Przejrzyste ceny bez ukrytych opłat</h1>
+                            <p class="hero__subtitle">
+                                Płać tylko za aktywnych kursantów, bez zobowiązań długoterminowych. <br>Wybierz moduły, których potrzebujesz i oblicz rzeczywisty koszt dla swojej szkoły.
+                            </p>
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- Pricing section END -->
 
-            <!-- Features section START -->
-            <section class="features-section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            Features section
+            <section class="pricing">
+                <div class="container-xl px-4">
+                    <div class="row g-4 align-items-start">
+
+                        <div class="col-lg-7">
+                            <div class="configurator">
+
+                                <div class="configurator__count-row">
+                                    <label class="configurator__label" for="studentCount">
+                                        <h2>Wybierz lub wpisz liczbę słuchaczy Twojej szkoły:</h2>
+                                    </label>
+                                    <input class="configurator__count-badge" type="number" id="studentCount" value="200" min="10" max="1000">
+                                </div>
+
+                                <div class="configurator__range-wrap mt-2 mb-4">
+                                    <div class="configurator__range-tooltip" id="rangeTooltip" aria-hidden="true">200</div>
+                                    <div class="configurator__range-slider">
+                                    <input
+                                        type="range"
+                                        class="configurator__range"
+                                        id="studentRange"
+                                        min="10"
+                                        max="1000"
+                                        value="200"
+                                    >
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <h2 class="configurator__label mb-4" id="label-modules">Wybierz moduły, z których chcesz korzystać:</h2>
+
+                                <div class="row g-0">
+                                    <div class="col-6">
+                                        <div class="configurator__toggle-row mb-3">
+                                            <span class="configurator__toggle-label">E-dziennik</span>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <label class="switch">
+                                                    <input type="checkbox" class="switch__input" checked disabled>
+                                                    <span class="switch__track"></span>
+                                                </label>
+                                                <i class="bi bi-lock-fill configurator__lock" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                        <div class="configurator__toggle-row mb-4">
+                                            <span class="configurator__toggle-label">Sekretariat</span>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <label class="switch">
+                                                    <input type="checkbox" class="switch__input" checked disabled>
+                                                    <span class="switch__track"></span>
+                                                </label>
+                                                <i class="bi bi-lock-fill configurator__lock" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                        <div class="info-box">
+                                            <i class="icon icon--tooltip-icon" aria-hidden="true"></i>
+                                            <div>
+                                                <p class="info-box__text">Sekretariat i E-dziennik to serce systemu, które otrzymujesz na start. Rozbuduj swój system o dodatkowe moduły i zwiększ możliwości swojej szkoły.</p>
+                                                <a href="#" class="info-box__link">Dowiedz się więcej o modułach</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="configurator__toggle-row mb-3">
+                                            <span class="configurator__toggle-label">Płatności online</span>
+                                            <label class="switch">
+                                                <input type="checkbox" class="switch__input">
+                                                <span class="switch__track"></span>
+                                            </label>
+                                        </div>
+                                        <div class="configurator__toggle-row mb-3">
+                                            <span class="configurator__toggle-label">Finanse</span>
+                                            <label class="switch">
+                                                <input type="checkbox" class="switch__input">
+                                                <span class="switch__track"></span>
+                                            </label>
+                                        </div>
+                                        <div class="configurator__toggle-row mb-3">
+                                            <span class="configurator__toggle-label">E-learning</span>
+                                            <label class="switch">
+                                                <input type="checkbox" class="switch__input">
+                                                <span class="switch__track"></span>
+                                            </label>
+                                        </div>
+                                        <div class="configurator__toggle-row mb-3">
+                                            <span class="configurator__toggle-label">Nauczanie online</span>
+                                            <label class="switch">
+                                                <input type="checkbox" class="switch__input">
+                                                <span class="switch__track"></span>
+                                            </label>
+                                        </div>
+                                        <div class="configurator__toggle-row mb-3">
+                                            <span class="configurator__toggle-label">Rejestracja</span>
+                                            <label class="switch">
+                                                <input type="checkbox" class="switch__input">
+                                                <span class="switch__track"></span>
+                                            </label>
+                                        </div>
+                                        <div class="configurator__toggle-row mb-3">
+                                            <span class="configurator__toggle-label">CRM</span>
+                                            <label class="switch">
+                                                <input type="checkbox" class="switch__input">
+                                                <span class="switch__track"></span>
+                                            </label>
+                                        </div>
+                                        <div class="configurator__toggle-row">
+                                            <span class="configurator__toggle-label">Medioteka</span>
+                                            <label class="switch">
+                                                <input type="checkbox" class="switch__input">
+                                                <span class="switch__track"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5">
+                            <div class="summary">
+                                <h2 class="summary__title">Twoje koszty korzystania:</h2>
+                                <hr>
+                                <div class="summary__row mb-3">
+                                    <span>Liczba słuchaczy:</span>
+                                    <span id="summaryStudents">200</span>
+                                </div>
+                                <div class="summary__row mb-3">
+                                    <span>Miesięczna cena za słuchacza:</span>
+                                    <span id="summaryPricePerStudent">1,00 zł</span>
+                                </div>
+                                <hr>
+                                <div class="summary__total-row">
+                                    <span class="summary__total-label">Miesięczny koszt brutto:</span>
+                                    <span class="summary__total-value" id="summaryBrutto">246,00 zł</span>
+                                </div>
+                                <div class="summary__netto-row">
+                                    <span>Miesięczny koszt netto:</span>
+                                    <span id="summaryNetto">200,00 zł</span>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn--primary mt-4 mx-auto d-flex">
+                                Wypróbuj za darmo przez 14 dni
+                                <i class="icon icon--angle-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="features">
+                <div class="container-xl px-4">
+                    <div class="row g-4">
+
+                        <div class="col-lg-3">
+                            <nav class="module-nav" id="moduleNav">
+                                <a href="#" class="module-nav__item module-nav__item--active" data-target="card-sekretariat">
+                                    <i class="icon icon--phone-set" aria-hidden="true"></i>
+                                    <span>Sekretariat</span>
+                                </a>
+                                <a href="#" class="module-nav__item" data-target="card-edziennik">
+                                    <i class="icon icon--book" aria-hidden="true"></i>
+                                    <span>E-dziennik</span>
+                                </a>
+                                <a href="#" class="module-nav__item" data-target="card-finanse">
+                                    <i class="icon icon--money-envelope" aria-hidden="true"></i>
+                                    <span>Finanse</span>
+                                </a>
+                                <a href="#" class="module-nav__item" data-target="card-crm">
+                                    <i class="icon icon--check-server" aria-hidden="true"></i>
+                                    <span>CRM</span>
+                                </a>
+                                <a href="#" class="module-nav__item" data-target="card-nauczanie">
+                                    <i class="icon icon--video-call" aria-hidden="true"></i>
+                                    <span>Nauczanie online</span>
+                                </a>
+                                <a href="#" class="module-nav__item" data-target="card-rejestracja">
+                                    <i class="icon icon--check-alt" aria-hidden="true"></i>
+                                    <span>Rejestracja</span>
+                                </a>
+                                <a href="#" class="module-nav__item" data-target="card-medioteka">
+                                    <i class="icon icon--files-alt" aria-hidden="true"></i>
+                                    <span>Medioteka</span>
+                                </a>
+                                <a href="#" class="module-nav__item" data-target="card-platnosci">
+                                    <i class="icon icon--website-money" aria-hidden="true"></i>
+                                    <span>Płatności online</span>
+                                </a>
+                            </nav>
+                        </div>
+
+                        <div class="col-lg-9">
+                            <div class="module-list">
+
+                                <div class="module-card module-card--active" id="card-sekretariat">
+                                    <img class="module-card__img" src="/assets/img/modules/Image-7.webp" alt="Sekretariat" loading="lazy">
+                                    <div class="module-card__body">
+                                        <h2 class="module-card__title">Sekretariat</h2>
+                                        <p class="module-card__text">Najważniejsza część systemu. Pozwala dodawać kursantów, lektorów, tworzyć grupy, ustalać plan zajęć, wspomaga tworzenie umów i kontrolę realizacji zajęć.</p>
+                                        <a href="#" class="module-card__link">
+                                            Dowiedz się więcej <i class="icon icon--arrow-right" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="module-card module-card--faded" id="card-edziennik">
+                                    <img class="module-card__img" src="/assets/img/modules/Image-6.webp" alt="E-dziennik" loading="lazy">
+                                    <div class="module-card__body">
+                                        <h2 class="module-card__title">E-dziennik</h2>
+                                        <p class="module-card__text">Obok Sekretariatu podstawowy moduł Platformy. Służy do prowadzenia elektronicznej dokumentacji przebiegu nauczania i umożliwia klientom bieżący dostęp do kalendarza zajęć, ocen, obecności, płatności.</p>
+                                        <a href="#" class="module-card__link">
+                                            Dowiedz się więcej <i class="icon icon--arrow-right" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="module-card module-card--faded" id="card-finanse">
+                                    <img class="module-card__img" src="/assets/img/modules/Image-5.webp" alt="Finanse" loading="lazy">
+                                    <div class="module-card__body">
+                                        <h2 class="module-card__title">Finanse</h2>
+                                        <p class="module-card__text">Moduł Finansowy umożliwia wystawianie faktur, rachunków, a także rozliczanie rat kursantów i czasu pracy lektorów. Można w nim prowadzić kasę firmową i rejestrować wpłaty w dowolnej formie płatności.</p>
+                                        <a href="#" class="module-card__link">
+                                            Dowiedz się więcej <i class="icon icon--arrow-right" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="module-card module-card--faded" id="card-crm">
+                                    <img class="module-card__img" src="/assets/img/modules/Image-4.webp" alt="CRM" loading="lazy">
+                                    <div class="module-card__body">
+                                        <h2 class="module-card__title">CRM</h2>
+                                        <p class="module-card__text">Customer Relationship Management - Moduł do zarządzania kontaktami z aktualnymi, archiwalnymi i potencjalnymi kursantami. Umożliwia tworzenie notatek, planowanie i opisywanie telefonów, spotkań z klientami.</p>
+                                        <a href="#" class="module-card__link">
+                                            Dowiedz się więcej <i class="icon icon--arrow-right" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="module-card module-card--faded" id="card-nauczanie">
+                                    <img class="module-card__img" src="/assets/img/modules/Image-3.webp" alt="Nauczanie online" loading="lazy">
+                                    <div class="module-card__body">
+                                        <h2 class="module-card__title">Nauczanie online</h2>
+                                        <p class="module-card__text">Realizacja kursów na odległość przy użyciu kamery, mikrofonu i tablicy. Możliwość dotarcia do zupełnie nowych klientów oraz zapewnienia sobie skokowego wzrostu przychodów.</p>
+                                        <a href="#" class="module-card__link">
+                                            Dowiedz się więcej <i class="icon icon--arrow-right" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="module-card module-card--faded" id="card-rejestracja">
+                                    <img class="module-card__img" src="/assets/img/modules/Image-2.webp" alt="Rejestracja" loading="lazy">
+                                    <div class="module-card__body">
+                                        <h2 class="module-card__title">Rejestracja</h2>
+                                        <p class="module-card__text">Internetowa forma zapisów nowych kursantów. Umożliwia dowolną konfigurację pytań oraz bezpośrednią integrację Państwa strony internetowej z Platformą LangLion. Uzupełnieniem dla niego jest moduł e-learningowy udoskonalający rejestrację o testy poziomujące.</p>
+                                        <a href="#" class="module-card__link">
+                                            Dowiedz się więcej <i class="icon icon--arrow-right" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="module-card module-card--faded" id="card-medioteka">
+                                    <img class="module-card__img" src="/assets/img/modules/Image-1.webp" alt="Medioteka" loading="lazy">
+                                    <div class="module-card__body">
+                                        <h2 class="module-card__title">Medioteka</h2>
+                                        <p class="module-card__text">Część systemu pomagająca kontrolować stany magazynowe szkół językowych (wypożyczenia, zwroty, rezerwacje). Może zawierać książki, czasopisma, materiały elektroniczne, a nawet sprzęt elektroniczny itd. Integracja z dziennikiem elektronicznym umożliwia lektorom i kursantom rezerwowanie pozycji.</p>
+                                        <a href="#" class="module-card__link">
+                                            Dowiedz się więcej <i class="icon icon--arrow-right" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="module-card module-card--faded" id="card-platnosci">
+                                    <img class="module-card__img" src="/assets/img/modules/Image.webp" alt="Płatności online" loading="lazy">
+                                    <div class="module-card__body">
+                                        <h2 class="module-card__title">Płatności online</h2>
+                                        <p class="module-card__text">PayU umożliwia słuchaczom elektroniczne regulowanie opłat za kursy, dzięki czemu zwiększa się komfort dokonywania płatności przez kursanta, a szkoła cieszy się szybkimi wpłatami. Sekretariat oszczędza czas, dzięki automatycznemu tworzeniu transakcji na Platformie LangLion.</p>
+                                        <a href="#" class="module-card__link">
+                                            Dowiedz się więcej <i class="icon icon--arrow-right" aria-hidden="true"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- Features section END -->
         </main>
     </body>
 </html>
